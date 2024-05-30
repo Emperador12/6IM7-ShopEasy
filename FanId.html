@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Fan ID</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #007bff;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .back-button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            display: flex;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .image-upload-container {
+            flex: 1;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-upload-container img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .upload-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .upload-button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .form-container input[type="text"]::placeholder {
+            color: #999;
+        }
+
+        .form-container input[type="text"]:focus::placeholder {
+            color: transparent;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Evento</h1>
+        <a href="principal.html" class="back-button">Regresar</a>
+    </div>
+
+    <div class="container">
+        <div class="image-upload-container">
+            <img id="compradorImage" src="placeholder.jpg" alt="Fotografía del Comprador">
+            <input type="file" accept="image/*" onchange="loadFile(event, 'compradorImage')" class="upload-button" value="Subir Foto del Comprador">
+            <img id="documentImage" src="placeholder.jpg" alt="Foto del Documento de Identidad">
+            <input type="file" accept="image/*" onchange="loadFile(event, 'documentImage')" class="upload-button" value="Subir Foto del Documento">
+        </div>
+        <div class="form-container">
+            <input type="text" id="nombre" name="nombre" required placeholder="Nombre">
+            <input type="text" id="apellidoPaterno" name="apellidoPaterno" required placeholder="Apellido Paterno">
+            <input type="text" id="apellidoMaterno" name="apellidoMaterno" required placeholder="Apellido Materno">
+            <input type="text" id="curp" name="curp" required placeholder="CURP">
+            <input type="submit" value="Crear Fan ID" onclick="validateForm()">
+        </div>
+    </div>
+
+    <script>
+        function loadFile(event, id) {
+            var image = document.getElementById(id);
+            image.src = URL.createObjectURL(event.target.files[0]);
+            image.onload = function() {
+                URL.revokeObjectURL(image.src) 
+            }
+        }
+
+        function validateForm() {
+            var nombre = document.getElementById("nombre").value.trim();
+            var apellidoPaterno = document.getElementById("apellidoPaterno").value.trim();
+            var apellidoMaterno = document.getElementById("apellidoMaterno").value.trim();
+            var curp = document.getElementById("curp").value.trim();
+
+            if (nombre === "" || apellidoPaterno === "" || apellidoMaterno === "" || curp === "") {
+                alert("Por favor, completa todos los campos.");
+                return false;
+            }
+
+            alert("¡Fan ID creado exitosamente!");
+            window.location.href = 'principal.html';
+        }
+    </script>
+</body>
+</html>
