@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Boletos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #007bff;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .menu {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .content {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .event-details {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .event-details h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .event-details p {
+            margin-bottom: 10px;
+        }
+
+        .event-details label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .event-details input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .event-details button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .event-details button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="menu">
+        <span><a href="index.html" style="text-decoration: none; color: white;">Regresar</a></span>
+    </div>
+    <h1>Solicitud de Boletos</h1>
+</div>
+
+<div class="content">
+    <div class="event-details">
+        <h2>Detalles del Evento</h2>
+        <p><strong>Evento:</strong> Concierto de Rock</p>
+        <p><strong>Lugar:</strong> Estadio Nacional</p>
+        <p><strong>Fecha:</strong> 25/06/2024</p>
+        <p><strong>Hora:</strong> 20:00</p>
+        <label for="boletos">Cantidad de Boletos:</label>
+        <input type="number" id="boletos" name="boletos" min="1" max="10">
+        <br>
+        <button onclick="comprarBoletos()">Comprar Boletos</button>
+    </div>
+</div>
+
+<script>
+    function comprarBoletos() {
+        const cantidadBoletos = document.getElementById('boletos').value;
+        if (cantidadBoletos > 0) {
+            window.location.href = 'compra.html';
+        } else {
+            alert('Por favor, ingresa una cantidad válida de boletos.');
+        }
+    }
+</script>
+
+</body>
+</html>
