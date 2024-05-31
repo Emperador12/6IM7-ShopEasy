@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Datos de Fan ID</title>
+    <link rel="stylesheet" href="styles_fan_id.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Eventos</h1>
+        <h2>Cambiar Datos de Fan ID</h2>
+        <a href="fan_id.html" class="back-button">Regresar</a>
+    </div>
+
+    <div class="content">
+        <div class="form-container">
+            <h2>Formulario de Cambio de Datos de Fan ID</h2>
+            <p>Ingrese el correo electrónico del Fan ID para buscar y actualizar la información.</p>
+            <form action="buscar_fan_id.php" method="POST" id="buscar-form">
+                <label for="email">Correo Electrónico del Fan ID:</label>
+                <input type="text" id="email" name="email" required placeholder="Email del Fan ID">
+                <input type="submit" value="Buscar Fan ID">
+            </form>
+
+            <form action="cambiar_fan_id.php" method="POST" id="cambiar-form" style="display: none;">
+                <input type="hidden" id="originalEmail" name="originalEmail">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Nombre">
+                
+                <label for="apellidoPaterno">Apellido Paterno:</label>
+                <input type="text" id="apellidoPaterno" name="apellidoPaterno" required placeholder="Apellido Paterno">
+                
+                <label for="apellidoMaterno">Apellido Materno:</label>
+                <input type="text" id="apellidoMaterno" name="apellidoMaterno" required placeholder="Apellido Materno">
+                
+                <label for="curp">CURP:</label>
+                <input type="text" id="curp" name="curp" required placeholder="CURP">
+                
+                <input type="submit" value="Guardar Cambios">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function fillForm(data) {
+            document.getElementById('originalEmail').value = data.email;
+            document.getElementById('nombre').value = data.nombre;
+            document.getElementById('apellidoPaterno').value = data.apellidoPaterno;
+            document.getElementById('apellidoMaterno').value = data.apellidoMaterno;
+            document.getElementById('curp').value = data.curp;
+            document.getElementById('buscar-form').style.display = 'none';
+            document.getElementById('cambiar-form').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

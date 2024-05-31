@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_boleto.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="menu">
+        <span style="font-size: 16px; font-weight: bold;"><a href="index.html" style="text-decoration: none; color: white;">Regresar</a></span>
+    </div>
+    <span style="font-size: 20px; font-weight: bold;">Seleccionar Lugar</span>
+</div>
+
+<div class="content">
+    <div class="event-list">
+        <h2>Selecciona un Evento</h2>
+        <ul>
+            <li onclick="selectEvent('evento1.jpeg', 'Concierto de Rock', 'Estadio Nacional', '25/06/2024', '20:00')">Concierto de Rock</li>
+            <li onclick="selectEvent('evento2.jpeg', 'Teatro', 'Galería de Arte Moderno', '10/07/2024', '18:00')">Teatro</li>
+            <li onclick="selectEvent('evento3.jpg', 'Payaso Franco Escamilla', 'Auditorio Central', '18/07/2024', '15:00')">Payaso Franco Escamilla</li>
+            <li onclick="selectEvent('evento4.jpg', 'Mexico vs China', 'Plaza Principal', '30/07/2024', '12:00')">Mexico vs China</li>
+            <li onclick="selectEvent('evento5.jpg', 'Conferencia de Software', 'Autódromo Internacional', '05/08/2024', '14:00')">Conferencia de Software</li>
+            <li onclick="selectEvent('evento6.jpg', 'Feria Gastronómica', 'Hotel Plaza', '15/08/2024', '09:00')">Feria Gastronómica</li>
+        </ul>
+    </div>
+
+    <div class="event-details">
+        <div id="eventImage">
+            <img src="evento1.jpeg" alt="Evento Imagen">
+        </div>
+        <div class="event-info">
+            <h2 id="eventTitle">Concierto de Rock</h2>
+            <p id="eventLocation">Lugar: Estadio Nacional</p>
+            <p id="eventDate">Fecha: 25/06/2024</p>
+            <p id="eventTime">Hora: 20:00</p>
+            <label for="boletos">Cantidad de Boletos:</label>
+            <input type="number" id="boletos" name="boletos" min="1" max="10">
+            <br>
+            <button onclick="solicitarBoletos()">Solicitar Boletos</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectEvent(image, title, location, date, time) {
+        document.getElementById('eventImage').innerHTML = `<img src="${image}" alt="Evento Imagen">`;
+        document.getElementById('eventTitle').innerText = title;
+        document.getElementById('eventLocation').innerText = `Lugar: ${location}`;
+        document.getElementById('eventDate').innerText = `Fecha: ${date}`;
+        document.getElementById('eventTime').innerText = `Hora: ${time}`;
+    }
+
+    function solicitarBoletos() {
+        const cantidadBoletos = document.getElementById('boletos').value;
+        if (cantidadBoletos > 0) {
+            const entrarSorteo = Math.random() < 0.5;
+            if (entrarSorteo) {
+                const confirmar = confirm('Pocos boletos disponibles. ¿Deseas entrar al sorteo?');
+                if (confirmar) {
+                    window.location.href = 'sorteo.html';
+                } else {
+                    window.location.href = 'index.html';
+                }
+            } else {
+                window.location.href = 'solicitud_boletos.html';
+            }
+        } else {
+            alert('Por favor, ingresa una cantidad válida de boletos.');
+        }
+    }
+</script>
+
+</body>
+</html>

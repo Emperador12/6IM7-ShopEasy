@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento 6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #007bff;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .back-button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            display: flex;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .image-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .details-container {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .details-container h2 {
+            margin: 0 0 20px 0;
+        }
+
+        .details-container p {
+            margin: 10px 0;
+        }
+
+        .details-container .price,
+        .details-container .seats {
+            margin: 20px 0;
+        }
+
+        .select-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .select-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Evento</h1>
+        <a href="index.html" class="back-button">Regresar</a>
+    </div>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="evento3.jpg" alt="Imagen del Evento 6">
+        </div>
+        <div class="details-container">
+            <h2>Detalles del Evento</h2>
+            <p><strong>Nombre:</strong> Franco Escamilla "Payaso"</p>
+            <p><strong>Fecha:</strong> 31 de Julio de 2024</p>
+            <p><strong>Hora:</strong> 21:00</p>
+            <p><strong>Lugar:</strong> Av. Juan Pablo Calderón #64, Cristóbal Norte, Cuzco</p>
+            <p><strong>Precios de Boletos:</strong></p>
+            <ul>
+                <li>Sección A: $650</li>
+                <li>Sección B: $1200</li>
+                <li>Sección C: $2500</li>
+                <li>Sección D: $5000</li>
+                <li>Sección E: $15400</li>
+            </ul>
+            <p><strong>Asientos Disponibles:</strong></p>
+            <ul>
+                <li>Sección A: 20000 asientos</li>
+                <li>Sección B: 20000 asientos</li>
+                <li>Sección C: 20000 asientos</li>
+                <li>Sección D: 20000 asientos</li>
+                <li>Sección E: 20000 asientos</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
