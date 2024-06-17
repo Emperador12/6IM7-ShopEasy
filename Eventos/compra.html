@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Boletos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_compra.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="menu">
+        <span><a href="index.html" style="text-decoration: none; color: white;">Regresar</a></span>
+    </div>
+    <h1>Compra de Boletos</h1>
+</div>
+
+<div class="content">
+    <div class="purchase-details">
+        <h2>Detalles de la Compra</h2>
+        <img src="evento1.jpeg" alt="Evento Imagen">
+        <p><strong>Evento:</strong> Concierto de Rock</p>
+        <p><strong>Lugar:</strong> Estadio Nacional</p>
+        <p><strong>Fecha:</strong> 25/06/2024</p>
+        <p><strong>Hora:</strong> 20:00</p>
+        <p><strong>Cantidad de Boletos:</strong> 2</p>
+        <p><strong>Asiento:</strong> General</p>
+        <p><strong>Total a Pagar:</strong> $100</p>
+
+        <div class="payment-form">
+            <h2>Información de la Tarjeta de Crédito</h2>
+            <form action="procesar_pago.php" method="POST">
+                <div class="form-group">
+                    <label for="nombreTarjeta">Nombre en la Tarjeta</label>
+                    <input type="text" id="nombreTarjeta" name="nombreTarjeta" required>
+                </div>
+                <div class="form-group">
+                    <label for="numeroTarjeta">Número de Tarjeta</label>
+                    <input type="text" id="numeroTarjeta" name="numeroTarjeta" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaVencimiento">Fecha de Vencimiento (MM/AA)</label>
+                    <input type="text" id="fechaVencimiento" name="fechaVencimiento" required>
+                </div>
+                <div class="form-group">
+                    <label for="codigoSeguridad">Código de Seguridad</label>
+                    <input type="text" id="codigoSeguridad" name="codigoSeguridad" required>
+                </div>
+                <input type="submit" value="Realizar Pago" class="btn-submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

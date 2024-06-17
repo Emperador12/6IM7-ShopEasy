@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #007bff;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            color: white;
+        }
+
+        .back-button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            display: flex;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .image-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .details-container {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .details-container h2 {
+            margin: 0 0 20px 0;
+        }
+
+        .details-container p {
+            margin: 10px 0;
+        }
+
+        .details-container .price,
+        .details-container .seats {
+            margin: 20px 0;
+        }
+
+        .select-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .select-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Evento</h1>
+        <a href="index.html" class="back-button">Regresar</a>
+    </div>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="evento2.jpeg" alt="Imagen del Evento 2">
+        </div>
+        <div class="details-container">
+            <h2>Detalles del Evento</h2>
+            <p><strong>Nombre:</strong> Romeo y Julieta</p>
+            <p><strong>Fecha:</strong> 25 de Octubre de 2025</p>
+            <p><strong>Hora:</strong> 13:00</p>
+            <p><strong>Lugar:</strong> Lundgaardgade 59, 8. sal. tv., Ferritslev, Jerup</p>
+            <p><strong>Precios de Boletos:</strong></p>
+            <ul>
+                <li>Sección A: $150</li>
+                <li>Sección B: $300</li>
+                <li>Sección C: $600</li>
+                <li>Sección D: $1000</li>
+                <li>Sección E: $1400</li>
+            </ul>
+            <p><strong>Asientos Disponibles:</strong></p>
+            <ul>
+                <li>Sección A: 50 asientos</li>
+                <li>Sección B: 75 asientos</li>
+                <li>Sección C: 40 asientos</li>
+                <li>Sección D: 30 asientos</li>
+                <li>Sección E: 40 asientos</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

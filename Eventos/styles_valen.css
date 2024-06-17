@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.blue-bar {
+    width: 100%;
+    background-color: #007bff;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blue-bar h1 {
+    margin: 0;
+}
+
+.back-button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    margin-top: 0;
+}
+
+#activarEntrada {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#activarEntrada:hover {
+    background-color: #0056b3;
+}
+
+#qrCode {
+    margin-bottom: 20px;
+}
+
+.evento-info,
+.comprador-info {
+    margin-bottom: 20px;
+}
+
+.evento-info h3,
+.comprador-info h3 {
+    margin-top: 0;
+}
+
+.evento-info p,
+.comprador-info p {
+    margin: 5px 0;
+}
