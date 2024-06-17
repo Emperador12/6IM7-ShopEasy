@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background-color: #007BFF;
+    padding: 25px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu {
+    position: relative;
+    display: inline-block;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown a:hover {
+    background-color: #f1f1f1;
+}
+.menu:hover .dropdown {
+    display: block;
+}
+.content {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.content .card {
+    text-align: center;
+    width: 30%;
+}
+.content .card img {
+    width: 100%;
+    height: auto;
+}
+.content .card button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.content .card button:hover {
+    background-color: #0056b3;
+}

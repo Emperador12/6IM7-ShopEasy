@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_sorteo.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="menu">
+        <span style="font-size: 16px; font-weight: bold;"><a href="index.html" style="text-decoration: none; color: white;">Regresar</a></span>
+    </div>
+    <span style="font-size: 20px; font-weight: bold;">Sorteo de Boletos</span>
+</div>
+
+<div class="content">
+    <div class="event-details">
+        <div id="eventImage">
+            <img src="evento1.jpeg" alt="Evento Imagen">
+        </div>
+        <div class="event-info">
+            <h2 id="eventTitle">Concierto de Rock</h2>
+            <p id="eventLocation">Lugar: Estadio Nacional</p>
+            <p id="eventDate">Fecha: 25/06/2024</p>
+            <p id="eventTime">Hora: 20:00</p>
+            <p id="ticketCount">Cantidad de Boletos: 2</p>
+            <button onclick="participarSorteo()">Participar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function participarSorteo() {
+        const ganador = Math.random() < 0.5;
+        if (ganador) {
+            window.location.href = 'ganador.html';
+        } else {
+            alert('Has perdido el sorteo.');
+            window.location.href = 'index.html';
+        }
+    }
+</script>
+
+</body>
+</html>

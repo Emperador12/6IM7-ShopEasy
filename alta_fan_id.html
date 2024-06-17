@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Fan ID</title>
+    <link rel="stylesheet" href="styles_fan_id.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Eventos</h1>
+        <h2>Crear Fan ID</h2>
+        <a href="fan_id.html" class="back-button">Regresar</a>
+    </div>
+
+    <div class="container">
+        <div class="image-upload-container">
+            <img id="compradorImage" src="placeholder.jpg" alt="Fotografía del Comprador">
+            <input type="file" accept="image/*" onchange="loadFile(event, 'compradorImage')" class="upload-button">
+            <img id="documentImage" src="placeholder.jpg" alt="Foto del Documento de Identidad">
+            <input type="file" accept="image/*" onchange="loadFile(event, 'documentImage')" class="upload-button">
+        </div>
+        
+        <div class="form-container">
+            <input type="text" id="nombre" name="nombre" required placeholder="Nombre">
+            <input type="text" id="apellidoPaterno" name="apellidoPaterno" required placeholder="Apellido Paterno">
+            <input type="text" id="apellidoMaterno" name="apellidoMaterno" required placeholder="Apellido Materno">
+            <input type="text" id="curp" name="curp" required placeholder="CURP">
+            <input type="submit" value="Crear Fan ID" onclick="validateForm()">  
+            <a href="validarfanid.html">Validar FanID</a>
+        </div>
+    </div>
+
+    <script>
+        function loadFile(event, id) {
+            var image = document.getElementById(id);
+            image.src = URL.createObjectURL(event.target.files[0]);
+            image.onload = function() {
+                URL.revokeObjectURL(image.src) 
+            }
+        }
+
+        function validateForm() {
+            var nombre = document.getElementById("nombre").value.trim();
+            var apellidoPaterno = document.getElementById("apellidoPaterno").value.trim();
+            var apellidoMaterno = document.getElementById("apellidoMaterno").value.trim();
+            var curp = document.getElementById("curp").value.trim();
+
+            if (nombre === "" || apellidoPaterno === "" || apellidoMaterno === "" || curp === "") {
+                alert("Por favor, completa todos los campos.");
+                return false;
+            }
+
+            alert("¡Fan ID creado exitosamente!");
+            window.location.href = 'fan_id.html';
+        }
+    </script>
+</body>
+</html>
